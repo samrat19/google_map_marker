@@ -1,6 +1,6 @@
 name: google_map_marker
 description: "Custom marker form google maps flutter"
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/samrat19/google_map_marker
 
 environment:
