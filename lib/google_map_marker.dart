@@ -8,13 +8,8 @@ import 'dart:ui' as ui;
 
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-class GoogleMapMarker {
-  final BuildContext context;
-  final String imagePath;
-
-  GoogleMapMarker({required this.context, required this.imagePath});
-
-  Future<BitmapDescriptor> getMarker() async {
+abstract class GoogleMapMarker {
+  static Future<BitmapDescriptor> getMarker(BuildContext context, String imagePath) async {
     ByteData byteData = await DefaultAssetBundle.of(context).load(imagePath);
     ui.Codec codec = await ui
         .instantiateImageCodec(byteData.buffer.asUint8List(), targetWidth: 100);

@@ -96,6 +96,15 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  google_map_marker:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: "822c17654218a19e5efef7062a51c59a5fc60eba"
+      url: "https://github.com/samrat19/google_map_marker"
+    source: git
+    version: "0.0.1"
   google_maps:
     dependency: transitive
     description:
