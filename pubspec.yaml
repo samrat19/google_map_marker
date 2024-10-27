@@ -1,7 +1,7 @@
 name: google_map_marker
-description: "A new Flutter package project."
+description: "Custom marker form google maps flutter"
 version: 0.0.1
-homepage:
+homepage: https://github.com/samrat19/google_map_marker
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  google_maps_flutter: 
+  google_maps_flutter: ^2.5.3
 
 dev_dependencies:
   flutter_test:
