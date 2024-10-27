@@ -19,7 +19,7 @@ abstract class GoogleMapMarker {
             .buffer
             .asUint8List();
 
-    var marker = BitmapDescriptor.bytes(imageData);
+    var marker = BitmapDescriptor.fromBytes(imageData);
 
     return marker;
   }

@@ -57,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   getMarker() async {
     marker = await GoogleMapMarker.getMarker(
-        context, "example/assets/cube_transparent.png");
+        context, "assets/cube_transparent.png");
 
     addMarker();
 
