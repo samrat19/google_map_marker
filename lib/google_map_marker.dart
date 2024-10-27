@@ -12,12 +12,11 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 ///
 ///
 abstract class GoogleMapMarker {
-
   ///this function returns a [Future] type of [BitmapDescriptor]
   ///
   ///
-  static Future<BitmapDescriptor> getMarker(BuildContext context, String imagePath) async {
-
+  static Future<BitmapDescriptor> getMarker(
+      BuildContext context, String imagePath) async {
     ///load the image path from asset
     ///
     ///
