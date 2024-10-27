@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:google_map_marker/google_map_marker.dart';
@@ -67,12 +68,14 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   addMarker() {
-    markers.add(
-      Marker(
-          markerId: const MarkerId('0'),
-          icon: marker!,
-          position: const LatLng(37.42796133580664, -122.085749655962)),
-    );
+    if(marker != null){
+      markers.add(
+        Marker(
+            markerId: const MarkerId('0'),
+            icon: marker!,
+            position: const LatLng(37.42796133580664, -122.085749655962)),
+      );
+    }
   }
 
   @override
