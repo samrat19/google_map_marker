@@ -101,7 +101,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "822c17654218a19e5efef7062a51c59a5fc60eba"
+      resolved-ref: d0eec7c08ad7f4236c5004d6f5ea6ec88314aa23
       url: "https://github.com/samrat19/google_map_marker"
     source: git
     version: "0.0.1"

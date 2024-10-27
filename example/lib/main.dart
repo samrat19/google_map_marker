@@ -35,9 +35,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   final Completer<GoogleMapController> _controller =
-  Completer<GoogleMapController>();
+      Completer<GoogleMapController>();
 
   static const CameraPosition _kGooglePlex = CameraPosition(
     target: LatLng(37.42796133580664, -122.085749655962),
@@ -46,6 +45,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
   BitmapDescriptor? marker;
 
+  List<Marker> markers = [];
+
+  bool init = false;
 
   @override
   void initState() {
@@ -53,11 +55,24 @@ class _MyHomePageState extends State<MyHomePage> {
     super.initState();
   }
 
-  getMarker() async{
-    marker = await GoogleMapMarker(
-      context: context,
-      imagePath: ''
-    ).getMarker();
+  getMarker() async {
+    marker = await GoogleMapMarker.getMarker(
+        context, "example/assets/cube_transparent.png");
+
+    addMarker();
+
+    setState(() {
+      init = true;
+    });
+  }
+
+  addMarker() {
+    markers.add(
+      Marker(
+          markerId: const MarkerId('0'),
+          icon: marker!,
+          position: const LatLng(37.42796133580664, -122.085749655962)),
+    );
   }
 
   @override
@@ -67,13 +82,18 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: GoogleMap(
-        mapType: MapType.hybrid,
-        initialCameraPosition: _kGooglePlex,
-        onMapCreated: (GoogleMapController controller) {
-          _controller.complete(controller);
-        },
-      ),
+      body: init
+          ? GoogleMap(
+              mapType: MapType.hybrid,
+              initialCameraPosition: _kGooglePlex,
+              markers: markers.toSet(),
+              onMapCreated: (GoogleMapController controller) {
+                _controller.complete(controller);
+              },
+            )
+          : const Center(
+              child: CircularProgressIndicator(),
+            ),
     );
   }
 }
