@@ -17,7 +17,7 @@ abstract class GoogleMapMarker {
   ///
   static Future<BitmapDescriptor> getMarker(
       BuildContext context, String imagePath) async {
-    ///load the image path from asset
+    ///load the image path from asset in form of byte data
     ///
     ///
     ByteData byteData = await DefaultAssetBundle.of(context).load(imagePath);
