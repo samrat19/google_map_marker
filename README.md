@@ -1,6 +1,6 @@
 # google_map_flutter
 
-A new Flutter package to make custom google map marker for Flutter
+A new Flutter package to make custom google map marker for google maps from an asset image
 
 ## Usage
 

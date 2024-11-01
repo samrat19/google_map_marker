@@ -1,6 +1,6 @@
 name: google_map_marker
-description: "Custom marker form google maps flutter"
-version: 0.0.2
+description: "A new Flutter package to make custom google map marker for google maps from an asset image"
+version: 0.0.3
 homepage: https://github.com/samrat19/google_map_marker
 
 environment:
